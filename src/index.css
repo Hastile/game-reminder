@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 배경 고정 및 전체 화면 커버 설정 */
+body {
+  min-height: 100vh;
+  /* 최소 뷰포트 높이 보장 */
+  background-image: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* 스크롤 시 배경 고정 */
+  background-size: cover;
+  /* 전체 뷰포트 커버 */
+  background-position: center center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* 가로 스크롤 방지 */
+}
+
+/* 스크롤바 숨기기 */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* 커스텀 애니메이션 */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 글래스모피즘 효과 강화 */
+.backdrop-blur-xl {
+  backdrop-filter: blur(16px);
+}
